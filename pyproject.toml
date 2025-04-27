@@ -1,0 +1,6 @@
+# dwg_analysis_v3/pyproject.toml
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+

@@ -1,6 +1,21 @@
-# dwg_analysis_v3/pyproject.toml
-
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "dwg_analysis"
+version = "0.1.0"
+description = "High energy physics analysis framework for NanoAOD data. I write code that works, not necessarily the most elegant"
+authors = [
+    { name="Derek Grove", email="derek.william.grove@cern.ch" }
+]
+readme = "README.md"  # optional
+license = {text = "MIT"}  # optional
+
+dependencies = [
+    "coffea==2025.3.0",
+]
+
+[tool.setuptools]
+packages = ["analysis_tools"]
+package-dir = {"" = "tools"}

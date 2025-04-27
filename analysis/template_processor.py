@@ -3,9 +3,12 @@ import numpy as np
 from coffea import processor
 from coffea.nanoevents import NanoAODSchema
 
-path_to_tools = '/home/cms-jovyan/dwg_analysis_v2/tools/'
+path_to_tools = '/home/cms-jovyan/dwg_analysis_v3/tools/'
 import sys
 sys.path.insert(1, path_to_tools)
+
+#from analysis_tools.skimming.naod_v12.lepton_skim import skim_ele
+
 
 # my tools:
 # from analysis_tools.skimming.parent_filter import prim_ele
@@ -27,12 +30,20 @@ class TestProcessor(processor.ProcessorABC):
         
         dataset = events.metadata['dataset']
         total_entries = ak.num(events, axis=0)
-        
+
         ele = events.Electron
-        jets = events.Jet
+        ele_pt = ele.pt
+        ele_pt = ele_pt[:10]
+        test = ak.sum(ak.num(ele_pt))
+        #skim_ele(ele)
 
         
         output = {
+            "total_entries": total_entries,
+            "ele_pt": ele_pt,
+            "fields": events.fields,
+            #"keys": skim_ele.keys(),
+            #"items": skim_ele.items(),
             
         }
             

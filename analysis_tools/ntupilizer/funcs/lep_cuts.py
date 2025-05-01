@@ -13,8 +13,8 @@ import hist.dask as dah
 from coffea.analysis_tools import PackedSelection
 from coffea.nanoevents import NanoAODSchema
 
-from analysis_tools.cuts.vid_unpacked import *
-from analysis_tools.cuts.gen_filter import *
+from analysis_tools.ntupilizer.funcs.vid_unpacked import *
+from analysis_tools.ntupilizer.funcs.gen_filter import *
 
 ###########################################################################
 # Sim-only masks (all imported from gen_filter.py)

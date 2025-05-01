@@ -1,0 +1,32 @@
+{
+    "MET": {
+      "variables": ["pt", "phi"],
+      "isLep": false
+    },
+    "Electron": {
+      "variables": [
+        "pt", "eta", "phi", "mass", "charge",
+        "dxy", "dz", "pfRelIso03_all", "miniPFRelIso_all", "sip3d"
+      ],
+      "isLep": true
+    },
+    "LowPtElectron": {
+      "variables": [
+        "pt", "eta", "phi", "mass", "charge",
+        "dxy", "dz", "miniPFRelIso_all"
+      ],
+      "isLep": true
+    },
+    "Muon": {
+      "variables": [
+        "pt", "eta", "phi", "mass", "charge",
+        "dxy", "dz", "pfRelIso03_all", "miniPFRelIso_all", "sip3d"
+      ],
+      "isLep": true
+    },
+    
+    "flags": {
+        
+    }
+    
+}

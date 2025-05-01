@@ -1,0 +1,42 @@
+{
+    
+    "event_variables": [
+    "MET.pt",
+    "MET.phi"
+  ],
+    
+    "electron_variables": [
+    "pt",
+    "eta",
+    "phi",
+    "mass",
+    "charge",
+    "dxy",
+    "dz",
+    "pfRelIso03_all",
+    "miniPFRelIso_all",
+    "sip3d"
+  ],
+    
+  "muon_variables": ["pt",
+    "eta",
+    "phi",
+    "mass",
+    "charge",
+    "dxy",
+    "dz",
+    "pfRelIso03_all",
+    "miniPFRelIso_all",
+    "sip3d"
+  ],
+    
+  "lpte_variables": ["pt",
+    "eta",
+    "phi",
+    "mass",
+    "charge",
+    "dxy",
+    "dz",
+    "miniPFRelIso_all"
+  ]
+}

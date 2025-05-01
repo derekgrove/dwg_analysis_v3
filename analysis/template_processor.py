@@ -3,11 +3,8 @@ import numpy as np
 from coffea import processor
 from coffea.nanoevents import NanoAODSchema
 
-path_to_tools = '/home/cms-jovyan/dwg_analysis_v3/tools/'
-import sys
-sys.path.insert(1, path_to_tools)
-
-#from analysis_tools.skimming.naod_v12.lepton_skim import skim_ele
+#from analysis_tools.cuts import skim_ele, skim_muon, skim_lpte
+from analysis_tools.cuts.KU_ntupilizer import make_ntuple
 
 
 # my tools:
@@ -29,25 +26,41 @@ class TestProcessor(processor.ProcessorABC):
     def process(self, events):
         
         dataset = events.metadata['dataset']
-        total_entries = ak.num(events, axis=0)
+        total_entries = len(events)
 
         ele = events.Electron
-        ele_pt = ele.pt
-        ele_pt = ele_pt[:10]
-        test = ak.sum(ak.num(ele_pt))
-        #skim_ele(ele)
+        muon = events.Muon
+        lpte = events.LowPtElectron
 
+        lpte_pt = lpte.pt
+
+        #print(events.fields)
+        #print(events.MET)
+        #print(events.MET.fields)
+        #print(events.Flag.METFilters)
+
+        #my_electrons = skim_ele(ele)
+        #my_events = events.MET
+        #my_muons = skim_muons(muon)
+        #my_lpte = skim_lpte(lpte)
+        
+        
+        #ntuple = {
+        #    "numEvents": total_entries,
+        #    "dataset": dataset,
+        #    "Electron": my_electrons,
+        #    "Muon": my_muons,
+        #}
+        ntuple = make_ntuple(events, ele, muon, lpte)
         
         output = {
-            "total_entries": total_entries,
-            "ele_pt": ele_pt,
-            "fields": events.fields,
-            #"keys": skim_ele.keys(),
-            #"items": skim_ele.items(),
-            
+            "ntuple": ntuple,
+            "events.Flag.METFilters": events.Flag.METFilters,
+            "lpte_pt": lpte_pt,
         }
             
         return output
     
     def postprocess(self, accumulator):
         pass
+

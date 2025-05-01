@@ -1,0 +1,14 @@
+{
+  "electron_variables": [
+    "pt",
+    "eta",
+    "phi",
+    "mass",
+    "charge",
+    "dxy",
+    "dz",
+    "pfRelIso03_all",
+    "miniPFRelIso_all",
+    "sip3d"
+  ]
+}

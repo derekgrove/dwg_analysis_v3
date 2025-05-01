@@ -9,13 +9,13 @@ description = "High energy physics analysis framework for NanoAOD data. I write 
 authors = [
     { name="Derek Grove", email="derek.william.grove@cern.ch" }
 ]
-readme = "README.md"  # optional
-license = {text = "MIT"}  # optional
+readme = "README.md"
+license = {text = "MIT"}
 
 dependencies = [
-    "coffea==2025.3.0",
+    "coffea>=2025.1.0",
 ]
 
 [tool.setuptools]
 packages = ["analysis_tools"]
-package-dir = {"" = "tools"}
+

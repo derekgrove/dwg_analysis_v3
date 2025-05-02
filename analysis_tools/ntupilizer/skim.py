@@ -81,6 +81,16 @@ def skim_all(events, genInfo=False):
     """
     Skim all collections defined in skim_variables.json from the given events object.
     Returns a dictionary of skimmed collections.
+    Format of returned skim is:
+    {
+        Collection1:
+            var1: [awk.arr or flat arr],
+            va2: [awk.arr or flat arr],
+            ...
+        Collection2:
+            var1: [awk.arr or flat arr],
+            ...    
+    }
     """
     ntuple = {}
 
